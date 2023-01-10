@@ -202,4 +202,4 @@ FROM temp_tables.regions
 
 SELECT *
 FROM temp_tables.regions
-WHERE ...
+WHERE population is null
