@@ -168,7 +168,6 @@ group by sto.store_name
 order by visitas desc
 
 
-
 -- (Exercício 3) Identifique quantos clientes moram em cada tamanho de cidade (o porte da cidade
 -- consta na coluna "size" da tabela temp_tables.regions)
 
