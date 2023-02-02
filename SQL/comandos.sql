@@ -477,5 +477,14 @@ select min(price) from sales.products
 -- estava acima ou abaixo do preço médio dos veículos daquela marca 
 -- (levar em consideração o desconto dado no veículo)
 
+WITH alguma_tabela as (
+SELECT
+	professional_status,
+	(current_date - birth_date)/365 as Idade
+from sales.customers)
 
-
+SELECT
+	professional_status,
+	avg(idade) as idade_media
+from alguma_tabela
+group by professional_status
