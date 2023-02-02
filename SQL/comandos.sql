@@ -452,11 +452,30 @@ from schema_2.tabela_2
 -- Una a tabela sales.products com a tabela temp_tables.products_2
 
 select * from sales.products
-
+union all
 select * from temp_tables.products_2
 
 
+-- EXEMPLOS ########################################################################
 
+-- (Exemplo 1) Análise de recorrência dos leads
+-- Calcule o volume de visitas por dia ao site separado por 1ª visita e demais visitas
+
+select *
+from sales.products
+where price = meno_valor
+
+select *
+from sales.products
+where price = (select min(price) from sales.products)
+
+-- Query para acharo produto com menor valor na tabela products
+select min(price) from sales.products
+
+-- (Exemplo 2) Análise do preço versus o preço médio
+-- Calcule, para cada visita ao site, quanto o preço do um veículo visitado pelo cliente
+-- estava acima ou abaixo do preço médio dos veículos daquela marca 
+-- (levar em consideração o desconto dado no veículo)
 
 
 
